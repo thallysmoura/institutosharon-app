@@ -27,7 +27,6 @@ export const waCourse = (course: string) =>
 
 export const nav = [
   { href: '#cursos', label: 'Cursos' },
-  { href: '#experiencia', label: 'Experiência' },
   { href: '#instituto', label: 'Instituto' },
   { href: '#unidades', label: 'Unidades' },
   { href: '#contato', label: 'Contato' },

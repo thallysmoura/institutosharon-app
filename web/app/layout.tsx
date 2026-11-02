@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Montserrat } from 'next/font/google';
+import { Cormorant_Garamond, Montserrat, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/data';
 import ImageGuard from '@/components/ImageGuard';
@@ -7,6 +7,7 @@ import LeadModal from '@/components/LeadModal';
 import BackToTop from '@/components/BackToTop';
 
 const display = Cormorant_Garamond({ subsets: ['latin'], weight: ['500', '600', '700'], style: ['normal', 'italic'], variable: '--font-display', display: 'swap' });
+const cta = Playfair_Display({ subsets: ['latin'], weight: ['600', '700'], variable: '--font-cta', display: 'swap' });
 const sans = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-sans', display: 'swap' });
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3100';
@@ -44,8 +45,9 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${sans.variable}`}>
+    <html lang="pt-BR" className={`${display.variable} ${sans.variable} ${cta.variable}`}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: "try{history.scrollRestoration='manual';if(location.hash)history.replaceState(null,'',location.pathname+location.search);window.scrollTo(0,0)}catch(e){}" }} />
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Ir para o conteúdo</a>
         {children}
         <ImageGuard />

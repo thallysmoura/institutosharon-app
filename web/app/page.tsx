@@ -1,8 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
 import Courses from '@/components/Courses';
-import Experience from '@/components/Experience';
+import About from '@/components/About';
 import Differentials from '@/components/Differentials';
 import Units from '@/components/Units';
 import Contact from '@/components/Contact';
@@ -14,10 +13,9 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
-        <Differentials />
         <Courses />
-        <Experience />
         <About />
+        <Differentials />
         <Units />
         <Contact />
       </main>

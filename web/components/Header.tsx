@@ -32,9 +32,6 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-ghost !min-h-[46px] hidden shrink-0 !px-5 !text-[0.8rem] lg:inline-flex xl:!px-6">
-          <span className="xl:hidden">Fale conosco</span><span className="hidden xl:inline">Iniciar atendimento</span>
-        </a>
         <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="menu-m" aria-label={open ? 'Fechar menu' : 'Abrir menu'} className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 lg:hidden">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
