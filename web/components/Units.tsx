@@ -23,6 +23,9 @@ export default function Units() {
                   {u.city === 'Manaus' && (
                     <a href={site.mapsDirections} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 border-b border-gold-500 pb-1 text-[0.8rem] font-semibold uppercase tracking-[0.16em] hover:text-gold-700">Como chegar <ArrowUpRight size={16} /></a>
                   )}
+                  {u.maps && (
+                    <a href={u.maps} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 border-b border-gold-500 pb-1 text-[0.8rem] font-semibold uppercase tracking-[0.16em] hover:text-gold-700">Como chegar <ArrowUpRight size={16} /></a>
+                  )}
                   {u.ig && (
                     <a href={u.ig} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 border-b border-gold-500 pb-1 text-[0.8rem] font-semibold uppercase tracking-[0.16em] hover:text-gold-700">Instagram da unidade <ArrowUpRight size={16} /></a>
                   )}

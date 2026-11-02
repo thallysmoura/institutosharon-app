@@ -7,7 +7,6 @@ import Differentials from '@/components/Differentials';
 import Units from '@/components/Units';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import FloatingContact from '@/components/FloatingContact';
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <FloatingContact />
     </>
   );
 }

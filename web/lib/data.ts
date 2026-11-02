@@ -73,7 +73,7 @@ export const shots: Shot[] = [
 
 export const units = [
   { city: 'Manaus', tag: 'Sede', line: site.address },
-  { city: 'Fortaleza', line: 'Turmas presenciais · confirme o local com a equipe', ig: 'https://www.instagram.com/instituto_sharonfortaleza/' },
+  { city: 'Fortaleza', line: 'Av. Antônio Sales, 2371 · Fortaleza/CE · CEP 60135-203', maps: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Antonio Sales, 2371, Fortaleza, CE, 60135-203'), ig: 'https://www.instagram.com/instituto_sharonfortaleza/' },
   { city: 'Porto Velho', line: 'Turmas presenciais · confirme o local com a equipe', ig: 'https://www.instagram.com/institutosharon_portovelho/' },
   { city: 'São Paulo', line: 'Turmas presenciais · confirme o local com a equipe' },
 ];
