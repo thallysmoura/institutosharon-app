@@ -14,10 +14,10 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
-        <About />
+        <Differentials />
         <Courses />
         <Experience />
-        <Differentials />
+        <About />
         <Units />
         <Contact />
       </main>

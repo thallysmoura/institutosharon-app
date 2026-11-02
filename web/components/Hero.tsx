@@ -45,7 +45,7 @@ export default function Hero() {
               <p className="eyebrow !gap-3 !text-[0.65rem] !tracking-[0.2em] sm:!text-[0.74rem]">Instituto Sharon</p>
               <h2 className="relative max-w-[16ch] font-display text-[1.9rem] font-semibold leading-[1.1] sm:text-[clamp(2rem,3.4vw,3rem)]">Excelência que transforma carreiras.</h2>
               <p className="relative max-w-[34ch] text-sm text-ink/75 sm:text-base">Formação de qualidade para você ir mais longe.</p>
-              <a href="#cursos" className="btn btn-ghost relative mt-1 !min-h-[44px] self-start !border-gold-500 !px-6 text-[0.85rem] !text-gold-700 sm:!min-h-[50px]">Conheça o Instituto <span aria-hidden>→</span></a>
+              <a href="#instituto" className="btn btn-ghost relative mt-1 !min-h-[44px] self-start !border-gold-500 !px-6 text-[0.85rem] !text-gold-700 sm:!min-h-[50px]">Conheça o Instituto <span aria-hidden>→</span></a>
             </div>
           </div>
         </Reveal>
