@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Montserrat } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/data';
 import ImageGuard from '@/components/ImageGuard';
+import BackToTop from '@/components/BackToTop';
 
 const display = Cormorant_Garamond({ subsets: ['latin'], weight: ['500', '600', '700'], style: ['normal', 'italic'], variable: '--font-display', display: 'swap' });
 const sans = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-sans', display: 'swap' });
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Ir para o conteúdo</a>
         {children}
         <ImageGuard />
+        <BackToTop />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>
