@@ -8,11 +8,11 @@ import { HealthController } from './health.controller';
 
 @Module({
   imports: [
-    ServeStaticModule.forRoot({
+    ...(process.env.SERVE_STATIC === 'false' ? [] : [ServeStaticModule.forRoot({
       rootPath: resolve(process.cwd(), process.env.LANDING_DIR || '../landing'),
       exclude: ['/api/(.*)'],
       serveStaticOptions: { extensions: ['html'], setHeaders: (res) => res.setHeader('Cache-Control', 'no-store') },
-    }),
+    })]),
     DbModule,
     AuthModule,
     LeadsModule,

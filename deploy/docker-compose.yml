@@ -1,0 +1,71 @@
+# Produção enxuta: db + api + web (nginx) + cloudflared. Só o túnel sai para a internet; nenhuma porta é aberta no host.
+name: sharon-prod
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sharon
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: sharon
+    command: ["postgres", "-c", "shared_buffers=32MB", "-c", "max_connections=20", "-c", "work_mem=2MB"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [internal]
+    mem_limit: 192m
+    cpus: 0.5
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sharon -d sharon"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: ../api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://sharon:${POSTGRES_PASSWORD}@db:5432/sharon
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      CORS_ORIGIN: https://institutosharon.mouora.com
+    depends_on: { db: { condition: service_healthy } }
+    networks: [internal]
+    mem_limit: 160m
+    cpus: 0.5
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  web:
+    build:
+      context: ../web
+      args: { NEXT_PUBLIC_SITE_URL: https://institutosharon.mouora.com }
+    restart: unless-stopped
+    depends_on: [api]
+    networks: [internal]
+    mem_limit: 64m
+    cpus: 0.5
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run
+    volumes: [./cf:/etc/cloudflared:ro]
+    depends_on: [web]
+    networks: [internal]
+    mem_limit: 96m
+    cpus: 0.3
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+networks:
+  internal: {}
+volumes:
+  pgdata: {}
