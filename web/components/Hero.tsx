@@ -9,7 +9,7 @@ export default function Hero() {
       <div aria-hidden className="pointer-events-none absolute -right-24 top-10 hidden h-[620px] w-[360px] opacity-[0.10] lg:block">
         <Image src="/img/emblem.png" alt="" fill sizes="360px" className="object-contain" />
       </div>
-      <div className="container-x grid grid-cols-[1.12fr_.88fr] items-center gap-4 py-10 sm:gap-10 sm:py-24 lg:min-h-[calc(100svh-88px)] lg:grid-cols-[1.1fr_.9fr] lg:gap-14 lg:py-12">
+      <div className="container-x grid grid-cols-[1.12fr_.88fr] items-start gap-4 sm:items-center py-10 sm:gap-10 sm:py-24 lg:min-h-[calc(100svh-88px)] lg:grid-cols-[1.1fr_.9fr] lg:gap-14 lg:py-12">
         <div>
           <p className="eyebrow hero-in !gap-2 !text-[0.55rem] !tracking-[0.16em] sm:!gap-3 sm:!text-[0.72rem] sm:!tracking-[0.28em]">Educação e Saúde · Manaus · Desde {site.since}</p>
           <div className="hero-in mt-4 sm:mt-7" style={{ ['--d' as string]: '90ms' }}><HeroCopy /></div>
@@ -19,8 +19,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-in relative w-full" style={{ ['--d' as string]: '200ms' }}>
-          <div aria-hidden className="absolute -left-2 -top-2 h-full w-full rounded-t-[999px] rounded-b-[28px] border border-gold-500/60 sm:-left-6 sm:-top-6" />
+        <div className="hero-in relative mt-11 w-full sm:mt-0" style={{ ['--d' as string]: '200ms' }}>
+          <div aria-hidden className="absolute -left-[11px] -top-[11px] h-full w-full rounded-t-[999px] rounded-b-[28px] border border-gold-500/60 sm:-left-6 sm:-top-6" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[28px] bg-sand shadow-soft">
             <Image src="/img/hero.webp" alt="Dra. Renata Sharon, coordenadora do Instituto Sharon" fill priority sizes="(min-width:1024px) 38vw, 90vw" className="object-cover object-[30%_20%]" />
           </div>
@@ -31,13 +31,14 @@ export default function Hero() {
         </div>
 
       </div>
-      <div className="container-x pb-10 sm:pb-20">
+      <div className="container-x !px-0 pb-0 sm:!px-10 sm:pb-20">
         <Reveal>
-          <div className="grid overflow-hidden rounded-[18px] border border-line bg-ivory shadow-soft sm:grid-cols-[1.15fr_1fr] sm:rounded-[26px]">
+          <div className="relative grid overflow-hidden bg-ivory sm:rounded-[26px] sm:border sm:border-line sm:shadow-soft sm:grid-cols-[1.15fr_1fr]">
             <div className="relative aspect-[16/10] sm:aspect-auto sm:min-h-[260px]">
               <Image src="/img/sede.webp" alt="Fachada da sede do Instituto Sharon em Manaus" fill sizes="(min-width:1280px) 640px, (min-width:640px) 55vw, 94vw" className="object-cover object-[50%_42%]" />
+              <svg aria-hidden viewBox="0 0 1440 48" preserveAspectRatio="none" className="absolute -top-px left-0 h-7 w-full fill-ivory sm:hidden"><path d="M0 0H1440V20C1200 52 960 46 720 24C480 2 240 -2 0 28Z" /></svg>
             </div>
-            <div className="relative flex flex-col justify-center gap-3 overflow-hidden px-6 py-7 sm:gap-4 sm:px-10 sm:py-10">
+            <div className="relative flex flex-col justify-center gap-3 overflow-hidden px-6 pb-14 pt-7 sm:gap-4 sm:px-10 sm:py-10">
               <svg aria-hidden viewBox="0 0 200 120" fill="none" className="pointer-events-none absolute -bottom-2 right-0 w-48 text-gold-500/60 sm:w-64">
                 <path d="M200 20C150 60 110 100 40 120" stroke="currentColor" strokeWidth="1" />
                 <path d="M200 40C160 75 125 105 80 120" stroke="currentColor" strokeWidth="1" opacity=".6" />
@@ -47,6 +48,7 @@ export default function Hero() {
               <p className="relative max-w-[34ch] text-sm text-ink/75 sm:text-base">Formação de qualidade para você ir mais longe.</p>
               <a href="#instituto" className="btn btn-ghost relative mt-1 !min-h-[44px] self-start !border-gold-500 !px-6 text-[0.85rem] !text-gold-700 sm:!min-h-[50px]">Conheça o Instituto <span aria-hidden>→</span></a>
             </div>
+            <svg aria-hidden viewBox="0 0 1440 48" preserveAspectRatio="none" className="absolute -bottom-px left-0 h-7 w-full fill-sand/60 sm:hidden"><path d="M0 48H1440V28C1200 -4 960 2 720 24C480 46 240 50 0 20Z" /></svg>
           </div>
         </Reveal>
       </div>

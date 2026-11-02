@@ -4,7 +4,7 @@ import { site } from '@/lib/data';
 
 export default function About() {
   return (
-    <section id="instituto" className="section-y bg-sand/60">
+    <section id="instituto" className="section-y">
       <div className="container-x grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
         <Reveal>
           <p className="eyebrow">O Instituto</p>

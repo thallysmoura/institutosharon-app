@@ -9,7 +9,7 @@ const items = [
 
 export default function Differentials() {
   return (
-    <section id="diferenciais" className="section-y">
+    <section id="diferenciais" className="section-y bg-sand/60">
       <div className="container-x">
         <Reveal>
           <p className="eyebrow">Diferenciais</p>
