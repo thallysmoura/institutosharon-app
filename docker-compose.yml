@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: sharon-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sharon
+      POSTGRES_PASSWORD: sharon_dev
+      POSTGRES_DB: sharon
+    ports:
+      - "5433:5432"
+    volumes:
+      - sharon_pgdata:/var/lib/postgresql/data
+    command: ["postgres", "-c", "shared_buffers=64MB", "-c", "max_connections=30"]
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sharon -d sharon"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  sharon_pgdata:

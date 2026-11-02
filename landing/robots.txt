@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloqueio de arquivos internos de desenvolvimento
+Disallow: /server.js
+Disallow: /README.md
+
+Sitemap: https://www.institutosharon.com.br/sitemap.xml
